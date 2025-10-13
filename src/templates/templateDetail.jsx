@@ -11,23 +11,34 @@ export default function Template1Page() {
 
 
   useEffect(() => {
-    const fetchTemplate = async () => {
-      try {
-        const res = await fetch(`${API}/templates/getById/${id}`);
-        if (!res.ok) throw new Error("Không thể lấy dữ liệu template!");
-        
-        const result = await res.json();
-        console.log("✅ Template data:", result);
-        setTemplate(result?.data || result); // tùy API trả về
-      } catch (err) {
-        console.error(err);
-      } finally {
-        setIsLoading(false);
-      }
-    };
+  const fetchTemplate = async () => {
+    try {
+      const res = await fetch(`${API}/templates/getAll`);
+      if (!res.ok) throw new Error("Không thể lấy dữ liệu templates!");
 
-    if (id) fetchTemplate();
-  }, [id]);
+      const result = await res.json();
+      console.log("✅ Tất cả templates:", result);
+
+      // Giả sử API trả về dạng { data: [...] }
+      const templates = result?.data || result;
+
+      // 🧠 Lọc theo userId hoặc templateId
+      const filtered = templates.find(
+        (t) => t.templateId === 1 // hoặc t.templateId === id
+      );
+
+      console.log("🎯 Template tìm được:", filtered);
+      setTemplate(filtered || null);
+    } catch (err) {
+      console.error("❌ Lỗi khi fetch template:", err);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  fetchTemplate();
+}, []);
+
 
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
