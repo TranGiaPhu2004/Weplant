@@ -13,7 +13,7 @@ export default function Template1Page() {
       try {
         const res = await fetch(`${API}/templates/getById/${id}`);
         if (!res.ok) throw new Error("Không thể lấy dữ liệu template!");
-
+        console.log("✅ Template data:", result);
         const result = await res.json();
         setTemplate(result?.data || result); // tùy API trả về
       } catch (err) {
