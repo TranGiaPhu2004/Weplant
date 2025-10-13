@@ -2,7 +2,7 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 export default function Template1Page() {
-  const { id } = useParams(); // lấy ID từ URL /templates/:id
+  const id = 1;
   const [theme, setTheme] = useState("dark");
   const [template, setTemplate] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
