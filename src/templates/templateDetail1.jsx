@@ -27,7 +27,7 @@ export default function Template2Page() {
 
         // 🧠 Lọc theo userId hoặc templateId
         const filtered = templates.find(
-          (t) => t.templateId === 1 // hoặc t.templateId === id
+          (t) => t.templateId === 2 // hoặc t.templateId === id
         );
 
         console.log("🎯 Template tìm được:", filtered);
