@@ -7,6 +7,8 @@ export default function Template1Page() {
   const [template, setTemplate] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
+  const API = "/api"; // hoặc đường dẫn thật của backend nếu bạn deploy
+
 
   useEffect(() => {
     const fetchTemplate = async () => {
