@@ -150,7 +150,7 @@ export default function TemplatesPage() {
       - Nếu người dùng không nói rõ ngân sách, bạn chọn template có chất lượng tốt nhất phù hợp mô tả.
       - Format chính xác: "Đề xuất template: [Tên đầy đủ] với ID [templateId số]."
       -Đề xuất template: [Tên đầy đủ] với ID [templateId].  
-👉    -Xem chi tiết: http://localhost:5173/templates/[templateId]  
+👉    -Xem chi tiết: https://weplant-lac.vercel.app/templates/[templateId]  
       -Giải thích ngắn gọn vì sao template này phù hợp.
       - Viết ngắn gọn, thân thiện, tiếng Việt.
       - Nếu không có template phù hợp, gợi ý liên hệ đội ngũ Weplant để tạo mẫu riêng.
