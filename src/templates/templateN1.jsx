@@ -117,9 +117,16 @@ const PackageCard = ({ name, price, perks, highlight }) => (
 );
 
 export default function TravelLandingPage() {
+  const { id } = useParams();
+  const location = useLocation();
+  const fromState = location.state?.templateId;
+  const fromQuery = new URLSearchParams(location.search).get("templateId");
+  const fromSession = sessionStorage.getItem("lastTemplateId");
+  const templateId = fromState || id || fromQuery || fromSession || "";
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800">
       {/* ===== NAVBAR ===== */}
+      <UseTemplateButton templateId={id} />
       <header className="sticky top-0 z-40 w-full border-b border-white/20 bg-white/80 backdrop-blur">
         <Container className="flex h-16 items-center justify-between">
           <a className="flex items-center gap-2 font-semibold" href="#home">
